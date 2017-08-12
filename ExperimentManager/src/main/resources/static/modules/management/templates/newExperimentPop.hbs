@@ -1,0 +1,170 @@
+<div class="modal">
+    <div class="modal-header">
+        <h3>New Experiment</h3>
+    </div>
+    <div class="modal-body">
+        <div class="col-md-12">
+            <h4 class="article-title">Basic Information</h4>
+            <form class="form-horizontal">
+                <div class="col-md-6">
+                    <div class="form-group" hidden>
+                        <label class="col-md-4 control-label">Id</label>
+                        <div class="col-md-8">
+                            <input type="text" name="id" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group required">
+                        <label class="col-md-4 control-label">Name</label>
+                        <div class="col-md-8">
+                            <input type="text" name="name" class="form-control" data-rule="required">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-12">
+            <h4 class="article-title">ES Domain</h4>
+            <form class="form-horizontal">
+                <div class="col-md-6">
+                    <div class="form-group required">
+                        <label class="col-md-4 control-label">Domain Name</label>
+                        <div class="col-md-8">
+                            <input type="text" name="domainName" data-rule="required"
+                                   class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Instance Count</label>
+                        <div class="btn-group col-md-8" data-toggle="buttons">
+                            <input type="number" name="instanceCount">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group required">
+                        <label class="col-md-4 control-label">Instance Type</label>
+                        <div class="col-md-8">
+                            <input type="text" name="instanceType" data-rule="required"
+                                   class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-12">
+            <h4 class="article-title">Cluster</h4>
+            <form class="file-info-form form-horizontal">
+                <div class="col-md-6">
+                    <div class="form-group required">
+                        <label class="col-md-4 control-label">Dedicated Master Type</label>
+                        <div class="col-md-8">
+                            <input type="text" name="dedicatedMasterType" data-rule="required"
+                                   class="form-control data-type" value="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="col-sepr-div form-group">
+                        <label class="control-label col-md-4">Dedicated Master Count</label>
+                        <div class="btn-group col-md-8" data-toggle="buttons">
+                            <input type="number" name="dedicatedMasterCount">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group required">
+                        <div class="col-md-8">
+                            <input type="checkbox" name="dedicatedMasterEnable" class="form-control">
+                        </div>
+                        <label class="col-md-4 control-label">Dedicated Master Enable</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group required">
+                        <div class="col-md-8">
+                            <input type="checkbox" name="zoneAwarenessEnable" class="form-control">
+                        </div>
+                        <label class="col-md-4 control-label">Zone Awareness Enable</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-12">
+            <h4 class="article-title">EBS Options</h4>
+            <form class="form-horizontal">
+                <div class="col-md-6">
+                    <div class="form-group required">
+                        <div class="col-md-8">
+                            <input type="checkbox" name="eBSEnable" class="form-control">
+                        </div>
+                        <label class="col-md-4 control-label">eBs Enable</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="col-sepr-div form-group">
+                        <label class="control-label col-md-4">Volumn Type</label>
+                        <div class="btn-group col-md-8" data-toggle="buttons">
+                            <input type="text" name="volumnType">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group required">
+                        <label class="col-md-4 control-label">Volumn Size </label>
+                        <div class="col-md-8">
+                            <input type="number" name="volumnSize" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-12">
+            <h4 class="article-title">Chaos Monkey</h4>
+            <form class="file-info-form form-horizontal">
+                <div class="col-md-6">
+                    <div class="form-group required">
+                        <label class="col-md-4 control-label">Period</label>
+                        <div class="col-md-8">
+                            <input type="number" name="period" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="col-sepr-div form-group">
+                        <label class="control-label col-md-4">Time Unit</label>
+                        <div class="btn-group col-md-8" data-toggle="buttons">
+                            <select type="" name="timeUnit">
+                                <option>Minute</option>
+                                <option>Second</option>
+                                <option>Hour</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group required">
+                        <label class="col-md-4 control-label">ES Chaos Type</label>
+                        <div class="col-md-8">
+                            <select type="checkbox" name="esChaosType" class="form-control"></select>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="btn-toolbar form-group">
+                    <button type="button" class="btn btn-min-width btn-primary btn-edit">Edit</button>
+                    <button type="button" class="btn btn-min-width btn-primary btn-ok">Submit</button>
+                    <button type="button" class="btn btn-min-width btn-default btn-cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
