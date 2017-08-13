@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h4 class="article-title">Basic Information</h4>
-                        <form class="form-horizontal">
+                        <form class="form-horizontal expr-form">
                             <div class="col-md-6" hidden>
                                 <div class="form-group">
                                     <label class="col-md-4">Id</label>
@@ -30,7 +30,7 @@
                     </div>
                     <div class="col-md-12">
                         <h4 class="article-title">ES Domain</h4>
-                        <form class="form-horizontal">
+                        <form class="form-horizontal domain-form">
                             <div class="col-md-6">
                                 <div class="form-group required">
                                     <label class="col-md-4">Domain Name</label>
@@ -44,7 +44,7 @@
                                 <div class="form-group">
                                     <label class="col-md-4">Instance Count</label>
                                     <div class="btn-group col-md-8" data-toggle="buttons">
-                                        <input type="number" name="instanceCount">
+                                        <input type="number" name="instanceCount" class="form-control">
                                     </div>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                     </div>
                     <div class="col-md-12">
                         <h4 class="article-title">Cluster</h4>
-                        <form class="file-info-form form-horizontal">
+                        <form class="form-horizontal cluster-form">
                             <div class="col-md-6">
                                 <div class="form-group required">
                                     <label class="col-md-4">Dedicated Master Type</label>
@@ -75,13 +75,13 @@
                                 <div class="col-sepr-div form-group">
                                     <label class="col-md-4">Dedicated Master Count</label>
                                     <div class="btn-group col-md-8" data-toggle="buttons">
-                                        <input type="number" name="dedicatedMasterCount">
+                                        <input type="number" name="dedicatedMasterCount" class="form-control">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group required">
-                                    <label class="col-md-12">
+                                    <label class="col-md-12 checkbox-inline">
                                         <input type="checkbox" name="dedicatedMasterEnable">
                                         Dedicated Master Enable
                                     </label>
@@ -89,7 +89,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group required">
-                                    <label class="col-md-12">
+                                    <label class="col-md-12 checkbox-inline">
                                         <input type="checkbox" name="zoneAwarenessEnable" >
                                         Zone Awareness Enable
                                     </label>
@@ -99,10 +99,10 @@
                     </div>
                     <div class="col-md-12">
                         <h4 class="article-title">EBS Options</h4>
-                        <form class="form-horizontal">
+                        <form class="form-horizontal ebs-form">
                             <div class="col-md-6">
                                 <div class="form-group required">
-                                    <label class="col-md-12">
+                                    <label class="col-md-12 checkbox-inline">
                                         <input type="checkbox" name="ebsEnable">
                                         ebs Enable
                                     </label>
@@ -110,17 +110,17 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="col-sepr-div form-group">
-                                    <label class="col-md-4">Volumn Type</label>
+                                    <label class="col-md-4">Volume Type</label>
                                     <div class="btn-group col-md-8" data-toggle="buttons">
-                                        <input type="text" name="volumnType" class="form-control">
+                                        <select name="volumeType" class="form-control"></select>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group required">
-                                    <label class="col-md-4">Volumn Size </label>
+                                    <label class="col-md-4">Volume Size </label>
                                     <div class="col-md-8">
-                                        <input type="number" name="volumnSize" class="form-control">
+                                        <input type="number" name="volumeSize" class="form-control">
                                     </div>
                                 </div>
                             </div>
@@ -128,7 +128,7 @@
                     </div>
                     <div class="col-md-12">
                         <h4 class="article-title">Chaos Monkey</h4>
-                        <form class="file-info-form form-horizontal">
+                        <form class="form-horizontal monkey-form">
                             <div class="col-md-6">
                                 <div class="form-group required">
                                     <label class="col-md-5">Period</label>
@@ -151,7 +151,13 @@
                                 <div class="form-group required">
                                     <label class="col-md-5">ES Chaos Type</label>
                                     <div class="col-md-7">
-                                        <select name="esChaosType" class="form-control" multiple></select>
+                                        <select name="esChaosType" class="form-control" multiple>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>

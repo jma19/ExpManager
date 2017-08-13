@@ -1,0 +1,30 @@
+# Eclipse
+.metadata/
+.recommenders/
+RemoteSystemsTempFiles/
+Servers/
+**/.settings
+**/.classpath
+**/.project
+**/.externalToolBuilders
+**/.pmd
+**/.checkstyle
+
+# idea
+.idea/
+**/*.iml
+
+# ZSMART HOME
+ZSMART_HOME/etc/projectized/system.cfg
+ZSMART_HOME/logs
+
+# Office
+**/~$*.doc
+**/~$*.docx
+**/~$*.xls
+**/~$*.xlsx
+
+# Others
+node_modules/
+**/logback.xml.runtime
+**/MANIFEST.MF
