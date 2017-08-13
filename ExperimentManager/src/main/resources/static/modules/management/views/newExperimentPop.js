@@ -1,8 +1,9 @@
 define([
     'backbone',
     'handlebars',
+    'modules/management/models/experiment',
     'text!modules/management/templates/newExperimentPop.hbs'
-], function (Backbone, Handlebars, tpl) {
+], function (Backbone, Handlebars, Experiment, tpl) {
     return Backbone.View.extend({
         template: Handlebars.compile(tpl),
 
@@ -11,9 +12,9 @@ define([
             'click .btn-ok' : 'saveForm',
             'click .btn-cancel' : 'hide'
         },
-        initialize: function (options) {
-            this.formObj = options.formObj;
-        },
+        // initialize: function (options) {
+        //     this.formObj = options.formObj;
+        // },
         render: function () {
             this.$el.html(this.template());
 
@@ -23,7 +24,7 @@ define([
             } else {
                 this.adjustForm('enable');
             }
-            return this;
+            return this.$el;
         },
         show: function () {
             this.$('.modal').modal('show');
@@ -39,7 +40,7 @@ define([
         },
 
         openForm: function () {
-          this.adjustForm();
+          this.adjustForm('enable');
         },
         adjustForm: function (operType) {
             switch (operType) {
@@ -58,8 +59,12 @@ define([
                     this.$('.btn-cancel').hide();
                     break;
             }
-           this.$('.btn-ok').show();
-           this.$('.btn-cancel').show();
+          //初始化多选框等控件
+        },
+        
+        saveForm: function () {
+            var exprModel = new Experiment;
+            exprModel.set();
         }
     });
 });

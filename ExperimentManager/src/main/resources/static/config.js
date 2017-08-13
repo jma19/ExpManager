@@ -4,6 +4,7 @@ require.config({
         underscore: 'js/underscore/underscore',
         backbone: 'js/backbone/backbone-1.3.3.min',
         bootstrap: 'js/bootstrap/js/bootstrap.min',
+        bootstrapTable: 'js/bootstrap-table/bootstrap-table.min',
         handlebars: 'js/handlebars/handlebars',
         text: 'js/text/text'
     },
@@ -13,10 +14,13 @@ require.config({
         },
         bootstrap: {
             deps: ['jquery']
+        },
+        bootstrapTable: {
+            deps: ['jquery', 'bootstrap']
         }
     }
 });
-require(['backbone', 'modules/management/views/mainView'],
+require(['backbone', 'modules/management/views/mainView', 'bootstrapTable'],
     function (Backbone, MainView) {
     var AppView = Backbone.View.extend({
         el: '#mainContent',

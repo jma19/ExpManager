@@ -2,15 +2,15 @@ define([
     'backbone',
     'handlebars',
     'modules/management/collections/experiments',
-    'text!../templates/experiment.hbs',
-    'js/bootstrap-table/bootstrap-table.min'
-], function (Backbone, Handlebars, Experiments, tpl) {
+    'modules/management/views/newExperimentPop',
+    'text!../templates/experiment.hbs'
+], function (Backbone, Handlebars, Experiments, ExprPop, tpl) {
     return Backbone.View.extend({
         template: Handlebars.compile(tpl),
 
         events: {
           'click .grid-del': 'removeExprRecords',  
-          'click .grid-add': 'addExprRecords'  
+          'click .grid-add': 'addExprRecord'  
         },
         
         initialize: function () {
@@ -34,7 +34,7 @@ define([
         render: function () {
             this.$el.html(this.template());
             this.initGrid(this.data);
-            return this;
+            return this.$el;
         },
         afterRender: function () {
             var experiments = new Experiments;
@@ -90,6 +90,15 @@ define([
                 error: function (collection, resp, options) {
                 }
             });
+        },
+        addExprRecord: function () {
+            var exprPop = new ExprPop;
+            this.$('.experiment-list').append(exprPop.render());
+            exprPop.show();
+        },
+        
+        refreshGrid: function () {
+            
         }
     });
 })

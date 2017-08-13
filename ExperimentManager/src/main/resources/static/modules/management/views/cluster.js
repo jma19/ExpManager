@@ -23,18 +23,18 @@ define([
 
         render: function () {
             this.$el.html(this.template());
-            this.cluster.fetch({
-                success: function (collection, resp, options) {
-                    this.data = collection;
-                    this.initGrid(this.data);
-                }.bind(this),
-                error: function (collection, resp, options) {
-                    alert('Failed to fetch cluster list');
-                }
-            });
+            // this.cluster.fetch({
+            //     success: function (collection, resp, options) {
+            //         this.data = collection;
+            //         this.initGrid(this.data);
+            //     }.bind(this),
+            //     error: function (collection, resp, options) {
+            //         alert('Failed to fetch cluster list');
+            //     }
+            // });
             // 模拟初始化表格，真实初始化点在line 29
             this.initGrid(this.data);
-            return this;
+            return this.$el;
         },
 
         initGrid: function (collection) {
