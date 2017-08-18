@@ -79,6 +79,11 @@ define([
             var clusterData = this.$('.cluster-form').data();
             var monkeyData = this.$('.monkey-form').data();
             this.exprModel.set();
+            if (exprData.expId) {
+                this.exprModel.update();
+            } else {
+                this.exprModel.save();
+            }
         },
 
         exprFormValidator: function () {
